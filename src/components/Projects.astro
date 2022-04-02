@@ -1,0 +1,45 @@
+---
+const projects = [
+    {id: 1, title: "Business Dashboard", problem: "Business still mostly worked with legacy systems and wanted to transition to digital", solution: "Business Dashboard that combines business data from legacy systems", tech: ["React", "Supabase", "Netlify"], live: "", source: "", img: ""},
+    {id: 2, title: "Employee Attendance Tracker", problem: "Business needed a solution for tracking Employee Attendance", solution: "Web application for Employees to check-in and check-out work times", tech: ["SvelteKit", "GoogleSheetsAPI", "Python", "Netlify"], live: "https://vk-radno-vrijeme.netlify.app/kava/", source: "https://github.com/G12c4/radno-vrijeme", img: ""},
+    {id: 3, title: "Informational Website", problem: "Business needed to speed up hotel check-in informations", solution: "Created website with all guest questions/answers, images, guides about the hotel and other attractions", tech: ["Vuepress", "Markdown", "Netlify"], live: "https://krka.to/", source: "https://github.com/G12c4/vkinfo", img: ""},
+    {id: 4, title: "Voucher Creator GUI", problem: "Business had problems with the lengthy process for creating vouchers for hotel Guests", solution: "The GUI app shortened voucher creation time from 15 minutes to 20 seconds", tech: ["Python", "PySimpleGUI", "Playwright", "Requests", "Openpyxl"], live: "", source: "https://github.com/G12c4/Voucher_creator_GUI", img: ""},
+    {id: 5, title: "Business Website", problem: "Business had old Wordpress site", solution: "New blazing-fast, fully responsive, mobile first website", tech: ["Next.js", "Bulma", "Sanity", "Vercel"], live: "http://vrata-krke.hr/", source: "", img: ""},
+    ]
+---
+
+<section id="projects" class="content section is-medium">
+{projects.map(project => 
+<h2 class="has-text-centered is-size-2 has-text-weight-bold is-uppercase">{`Project ${project.id}`}</h2>
+    <div class="box columns">
+        <div class="column">
+            <h3 class="block">{project.title}</h3>
+                <div class="block tags">
+                {project.tech.map(tech => 
+                    <span class="tag">{tech}</span>)}
+                </div>
+                <div class=" block has-text-weight-semibold">Problem:
+                <span class="has-text-weight-light">{project.problem}</span>
+                </div>
+                <div class="block has-text-weight-semibold">Solution:
+                <span class="has-text-weight-light">{project.solution}</span>
+                </div>
+                {project.live && <a href={project.live} target="_blank"><button class="block button is-primary is-outlined has-text-weight-bold">See Live</button></a>}
+                {project.source && <a href={project.source} target="_blank"><button class="block button is-primary is-outlined has-text-weight-bold">Source Code</button></a>}
+                </div>
+                <div class="column">
+                    <figure class="block image is-128x128">
+                        <img src="https://bulma.io/images/placeholders/128x128.png">
+                    </figure>
+                </div>
+            </div>)}
+</section>
+
+<style>
+    section {
+            max-width: 1408px;
+            margin: 0 auto
+        }
+</style>
+
+// 

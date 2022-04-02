@@ -1,0 +1,35 @@
+---
+import NavBar from "../components/NavBar.astro"
+import Hero from "../components/Hero.astro"
+import Skills from "../components/Skills.astro"
+import Projects from "../components/Projects.astro"
+import About from "../components/About.astro"
+import Contact from "../components/Contact.astro"
+import Footer from "../components/Footer.astro"
+const languageSwitcher = "About"
+---
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <link rel="icon" href="public/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@500&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/d5a761cd43.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<NavBar />
+<Hero client:visible />
+<Skills client:visible />
+<Projects client:visible />
+<About client:visible />
+<Contact client:visible />
+<Footer client:visible />
+
+<style>
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+</style>

@@ -1,0 +1,26 @@
+---
+    let name = "Josip Grcic";
+---
+
+<footer>
+    &copy; {new Date().getFullYear()} {name}
+    <small>I have built this site with Astro and Bulma</small>
+</footer>
+
+<style>
+footer {
+    margin-top:auto;
+    background: gray;
+    text-align: center;
+    color: white;
+    padding: 2rem 2rem 2rem;
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+}
+small {
+    display: block;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+</style>

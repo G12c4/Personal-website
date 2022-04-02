@@ -1,0 +1,50 @@
+<section id="hero" class="container columns content section is-large">
+    <div  class="section column  ">
+        <h1 class="title is-size-3-mobile has-text-weight-bold ">
+            Hi, I'm <span class="has-text-primary">Josip.</span><br />I'm a full stack developer.
+        </h1>
+        <div class="buttons">
+            <button data-link="skills" id="scroll_to" class="button is-medium is-responsive is-primary is-outlined has-text-weight-bold ">Skills</button>
+            <button data-link="projects" id="scroll_to" class="button is-medium is-responsive is-primary is-outlined has-text-weight-bold">Projects</button>
+            <button data-link="about" id="scroll_to" class="button is-medium is-responsive is-primary is-outlined has-text-weight-bold">About</button>
+            <button data-link="contact" id="scroll_to" class="button is-medium is-responsive is-primary is-outlined has-text-weight-bold">Contact</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const links = document.querySelectorAll("#scroll_to")
+    links.forEach(item => {
+    item.addEventListener("click", () => {
+        const el = document.getElementById(item.getAttribute("data-link"))
+        el.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    })
+})
+</script>
+
+<style>
+    #hero {
+        height: 100vh;
+        max-width: 1408px;
+        margin: 0 auto
+    }
+
+    h1.title {
+            font-size: 80px !important;
+            margin-top: 2vh;
+        }
+
+    @media screen and (max-width: 768px) and (min-width: 250px) {
+        h1.title {
+            font-size: 60px !important;
+            margin-top: 2vh;
+        }
+
+        div.buttons {
+            margin-right: 8rem;
+        }
+    }
+</style>

@@ -1,0 +1,54 @@
+<section id="contact" class="content section is-medium">
+    <h2 class="has-text-centered is-size-1 has-text-weight-bold is-uppercase">Contact</h2>
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input id="name" class="input is-primary" type="text" placeholder="Text input">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+                <input id="email" class="input is-primary" type="email" placeholder="Email input">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+                <textarea id="message" class="textarea is-primary" placeholder="Textarea"></textarea>
+            </div>
+        </div>
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-primary is-outlined has-text-weight-bold">Submit</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script>
+    function sendEmail() {
+        Email.send({
+            SecureToken: "f2de1b7a-2a75-404d-88c6-3eec346816f7",
+            To : 'josipgrcic@gmail.com',
+            From : "josipgrcic@gmail.com",
+            Subject : "Message from josipgrcic.dev",
+            Body : `Name: ${document.getElementById("name").value}<br>
+            From: ${document.getElementById("email").value}<br>
+            Message: ${document.getElementById("message").value}`
+        }).then(
+    message => alert(message)
+);
+    }
+</script>
+
+<style>
+    section {
+        max-width: 1408px;
+        margin: 0 auto
+    }
+</style>
